@@ -1,14 +1,14 @@
 {
   "name": "nodebb-theme-persona-latin-extended",
-  "version": "4.1.90",
+  "version": "4.1.95",
   "nbbpm": {
     "compatibility": "^0.8.2 || ^0.9.0 || ^1.0.0"
   },
-  "description": "Persona theme for NodeBB (with latin-extended Roboto font subset)",
+  "description": "Persona theme for NodeBB",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sznowicki/nodebb-theme-persona"
+    "url": "https://github.com/psychobunny/nodebb-theme-persona"
   },
   "keywords": [
     "nodebb",
