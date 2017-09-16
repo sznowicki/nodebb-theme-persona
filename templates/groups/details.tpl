@@ -70,7 +70,7 @@
 					<!-- IF !group.pending.length -->
 					<div class="alert alert-info">[[groups:pending.none]]</div>
 					<!-- ENDIF !group.pending.length -->
-					<!-- BEGIN pending -->
+					<!-- BEGIN group.pending -->
 					<tr data-uid="{group.pending.uid}">
 						<td>
 							<!-- IF group.pending.picture -->
@@ -94,7 +94,7 @@
 							</div>
 						</td>
 					</tr>
-					<!-- END pending -->
+					<!-- END group.pending -->
 				</table>
 			</div>
 		</div>
@@ -114,7 +114,7 @@
 					<textarea class="form-control" component="groups/members/bulk-invite" placeholder="[[groups:bulk-invite-instructions]]"></textarea>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group clearfix">
 					<button class="btn btn-default btn-sm pull-right" component="groups/members/bulk-invite-button">[[groups:bulk-invite]]</button>
 				</div>
 
@@ -122,7 +122,7 @@
 					<!-- IF !group.invited.length -->
 					<div class="alert alert-info">[[groups:invited.none]]</div>
 					<!-- ENDIF !group.invited.length -->
-					<!-- BEGIN invited -->
+					<!-- BEGIN group.invited -->
 					<tr data-uid="{group.invited.uid}">
 						<td>
 							<!-- IF group.invited.picture -->
@@ -145,7 +145,7 @@
 							</div>
 						</td>
 					</tr>
-					<!-- END invited -->
+					<!-- END group.invited -->
 				</table>
 			</div>
 		</div>
@@ -229,7 +229,11 @@
 			</div>
 		</div>
 		<!-- ENDIF group.isOwner -->
-		<div widget-area="left"></div>
+		<div widget-area="left">
+			<!-- BEGIN widgets.left -->
+			{{widgets.left.html}}
+			<!-- END widgets.left -->
+		</div>
 	</div>
 	<div class="col-lg-8 col-xs-12">
 		<div class="col-lg-11">
@@ -238,6 +242,10 @@
 			<!-- ENDIF !posts.length -->
 			<!-- IMPORT partials/posts_list.tpl -->
 		</div>
-		<div widget-area="right"></div>
+		<div widget-area="right">
+			<!-- BEGIN widgets.right -->
+			{{widgets.right.html}}
+			<!-- END widgets.right -->
+		</div>
 	</div>
 </div>
