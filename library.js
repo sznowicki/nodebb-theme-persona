@@ -121,7 +121,7 @@ library.getLinkTags = function (data, callback) {
 	data.links.push({
 		rel: 'prefetch stylesheet',
 		type: '',
-		href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
+		href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin-ext',
 	});
 
 	callback(null, data);
