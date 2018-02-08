@@ -1,6 +1,6 @@
 'use strict';
 
-var S = require.main.require('string');
+var striptags = require('striptags');
 var meta = module.parent.require('./meta');
 var user = module.parent.require('./user');
 
@@ -29,7 +29,7 @@ library.addAdminNavigation = function(header, callback) {
 library.getTeasers = function(data, callback) {
 	data.teasers.forEach(function(teaser) {
 		if (teaser && teaser.content) {
-			teaser.content = S(teaser.content).stripTags('img').s;
+			teaser.content = striptags(teaser.content, ['img']);
 		}
 	});
 	callback(null, data);
@@ -108,13 +108,23 @@ library.addUserToTopic = function(data, callback) {
 			if (err) {
 				return callback(err);
 			}
-			
+
 			data.templateData.loggedInUser = userdata;
 			callback(null, data);
 		});
 	} else {
 		callback(null, data);
 	}
+};
+
+library.getLinkTags = function (data, callback) {
+	data.links.push({
+		rel: 'prefetch stylesheet',
+		type: '',
+		href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
+	});
+
+	callback(null, data);
 };
 
 module.exports = library;

@@ -1,8 +1,8 @@
 {
-  "name": "nodebb-theme-persona-latin-extended",
-  "version": "6.0.1",
+  "name": "nodebb-theme-persona",
+  "version": "7.2.20",
   "nbbpm": {
-    "compatibility": "^1.4.4"
+    "compatibility": "^1.7.0"
   },
   "description": "Persona theme for NodeBB (with latin-extended Roboto font subset)",
   "main": "theme.less",
@@ -42,5 +42,9 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/psychobunny/nodebb-theme-persona/issues"
+  },
+  "dependencies": {
+    "striptags": "^3.1.1",
+    "pulling": "^1.1.1"
   }
 }
