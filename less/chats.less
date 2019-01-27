@@ -60,7 +60,7 @@
 			overflow-x: hidden;
 			overflow-y: auto;
 			border-top: 1px solid @gray-lighter;
-		
+
 			li {
 				position: relative;
 				clear: both;
@@ -73,14 +73,14 @@
 				border-bottom: 1px solid;
 				border-color: #eee;
 				background: #fff;
-		
+
 				i {
 					position: relative;
 					left: -30px;
 					font-size: 20px;
 					top: -20px;
 				}
-		
+
 				img, .user-icon {
 					.user-icon-style(50px, 2.4rem, 50%);
 					margin-top: 4px;
@@ -150,7 +150,6 @@
 
 		[component="chat/input"] {
 			flex: 1;
-			background: none;
 			box-shadow: none;
 			border: 0;
 			border: 1px solid @gray-lighter;
@@ -186,6 +185,12 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 	border-top: 1px solid @gray-lighter;
+
+	> li.no_active {
+		height: initial;
+		padding-bottom: 0.5rem;
+		text-align: center;
+	}
 
 	> li {
 		position: relative;
@@ -439,7 +444,7 @@
 				margin-left: 13px;
 
 				a {
-					color: @gray-dark;
+					color: @text-color;
 				}
 			}
 
@@ -449,6 +454,11 @@
 				display: inline-block;
 				margin-left: 10px;
 				.user-select(none);
+			}
+
+			.chat-ip, .chat-edited {
+				margin-left: 5px;
+				margin-top: 2px;
 			}
 
 			.message-body {
@@ -555,5 +565,12 @@
 
 	[data-action="pop-out"] {
 		display: none;
+	}
+}
+
+/* Mobile handling of chat modal */
+@media (max-width: @screen-sm-max)  {
+	.chat-modal {
+		z-index: @zindex-popover + 10;
 	}
 }
